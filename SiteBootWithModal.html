@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Bootsrap Example</title>
+	<!-- This tells bootsrtap to use proper scaling -->
+	<meta name= "viewport" content="width=devie-width, initial-scale=1">
+	<link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- here for the modal things not sure if it is needed or if it will work-->
+	<!--<script src="bootstrap.min.js"/>-->
+	
+	<!-- *********
+	******************************************************************************************************************************************
+	FOR ALL THE &NBSP SYMBOLS LATER CHANGE IT IN CSS TO SOME PADDING SO ITS EASIER TO MANIPULATE AN DNOT ALL TRAAAASSSHHHHHHH!!!!!!!!
+	******************************************************************************************************************************************
+	******************************************************************************************************************************************
+	-->
+	
+</head>
+
+<!--Move this css into a seperate file -->
+
+<style>
+.container{
+	text-align: left;
+}
+h1{
+	text-align: left;
+}
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+
+<!------------------------------------------------------------------------------------------------->
+
+<body>
+	<!--
+	<div class = "container">
+		<div class = "jumbotron">
+			<h1>Calendar</h1>
+			<p>Here are your courses for this semester</p><br><br>
+	</div>
+	-->
+	<TABLE  CLASS="datadisplaytable" SUMMARY="This layout table is used to present the weekly course schedule." WIDTH="75%">
+		<tr>
+			<th CLASS="ddheader" scope="col" >&nbsp;</th>
+			<th CLASS="ddheader" scope="col" >&nbsp;&nbsp;&nbsp;Monday&nbsp;&nbsp;&nbsp;</th>
+			<th CLASS="ddheader" scope="col" >&nbsp;&nbsp;&nbsp;Tuesday&nbsp;&nbsp;&nbsp;</th>
+			<th CLASS="ddheader" scope="col" >&nbsp;&nbsp;&nbsp;Wednesday&nbsp;&nbsp;&nbsp;</th>
+			<th CLASS="ddheader" scope="col" >&nbsp;&nbsp;&nbsp;Thursday&nbsp;&nbsp;&nbsp;</th>
+			<th CLASS="ddheader" scope="col" >&nbsp;&nbsp;&nbsp;Friday&nbsp;&nbsp;&nbsp;</th>
+		</tr>
+				<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >8am</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="5" type = "button" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3380-A02<br>15304 Lecture<br>8:30 am-9:45 am<br>EITC E2 350</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="5" type = "button" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3380-A02<br>15304 Lecture<br>8:30 am-9:45 am<br>EITC E2 350</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >9am</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >10am</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >11am</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		
+		<!-- was good up to here-->
+		
+		<tr>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3020-A01<br>10186 Lecture<br>11:30 am-12:20 pm<br>EITC E2 110</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3020-A01<br>10186 Lecture<br>11:30 am-12:20 pm<br>EITC E2 110</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3020-A01<br>10186 Lecture<br>11:30 am-12:20 pm<br>EITC E2 110</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >12pm</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3490-A01<br>10209 Lecture<br>12:30 pm-1:20 pm<br>EITC E2 105</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3490-A01<br>10209 Lecture<br>12:30 pm-1:20 pm<br>EITC E2 105</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 3490-A01<br>10209 Lecture<br>12:30 pm-1:20 pm<br>EITC E2 105</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >1pm</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >2pm</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+		<th ROWSPAN="4" CLASS="ddlabel" scope="row" >3pm</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 2130-A01<br>10152 Lecture<br>3:30 pm-4:20 pm<br>ARMES 205</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 2130-A01<br>10152 Lecture<br>3:30 pm-4:20 pm<br>ARMES 205</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td ROWSPAN="3" CLASS="btn btn-default" data-toggle ="modal" data-target="#myModal"><a HREF="#">COMP 2130-A01<br>10152 Lecture<br>3:30 pm-4:20 pm<br>ARMES 205</a></td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<th ROWSPAN="4" CLASS="ddlabel" scope="row" >4pm</th>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		<tr>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+			<td CLASS="dddefault">&nbsp;</td>
+		</tr>
+		
+		
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+			
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Class Name would go here</h4>
+						</div>
+						<div class="modal-body">
+							<p>Info stuff: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp InfoStuff</p><br>
+							<p>Info stuff: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp InfoStuff</p><br>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+			  
+				</div>
+			</div>
+			
+
+
+	</table>
+	
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <h3>Information about class: <small>aeudbea a daeo dapeb eifbe</small></h3><br>
+		  <h3>Teacher: <small>Dr. ajdaed</small></h1><br>
+		  <h3>Pre-req: <small>this and that</small></h1><br>
+	</div>
+	
+	<!--Some javascript for the slide move this into a seperate file-->
+	
+<script>
+	function openNav() {
+		document.getElementById("mySidenav").style.width = "250px";
+		document.getElementById("main").style.marginLeft = "250px";
+		document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+	}
+
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+		document.getElementById("main").style.marginLeft= "0";
+		document.body.style.backgroundColor = "white";
+	}
+</script>
+	<!--Not using this anymore was for side nav now using modal -->
+	
+</body>
+</html>
